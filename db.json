@@ -1,0 +1,40 @@
+{
+    "client":[
+        {
+            "id":1,
+            "name":"Micronsol Inc",
+            "industry":"Software Development",
+            "status":"Active"            
+        },
+        {
+            "id":2,
+            "name":"Tech Solutions Ltd",
+            "industry":"Information Technology",
+            "status":"Active"            
+        },
+        {
+            "id":3,
+            "name":"Green Energy Co",
+            "industry":"Renewable Energy",
+            "status":"Inactive"            
+        },
+        {
+            "id":4,
+            "name":"HealthCare Partners",
+            "industry":"Healthcare",
+            "status":"Active"            
+        },
+        {
+            "id":5,
+            "name":"EduTech Innovations",
+            "industry":"Education Technology",
+            "status":"Active"            
+        },{
+            "id":6,
+            "name":"FinServe Solutions",
+            "industry":"Financial Services",
+            "status":"Inactive"
+        }
+
+    ]
+}

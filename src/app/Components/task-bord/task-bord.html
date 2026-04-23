@@ -1,0 +1,101 @@
+<div class="container-fluid bord p-3">
+    
+        <div class="d-flex gap-2 col-4 mb-3">
+            <input type="text" class="form-control" placeholder="Task Title" #taskTitleInput
+                (keyup.enter)="addTasks(taskTitleInput)" />
+            <button class="btn btn-primary" (click)="addTasks(taskTitleInput)">
+                Add
+            </button>
+        </div>
+
+    <main class="row g-3 flex-nowrap overflow-auto">
+
+        <!-- Todo -->
+        <section class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    To Do ({{remainingTasks()}})
+                </div>
+                <div class="card-body">
+
+                    @for(task of tasks();track task.id)
+                    {
+                        @if(task.status==="Todo")
+                        {
+                        <div class="card mb-2 p-2 shadow-sm">
+                            <p class="fw-bold mb-1">{{task.title}}</p>
+
+                            <div class="d-flex gap-1 flex-wrap">
+                                <button class="btn btn-sm btn-danger" (click)="deleteTasks(task.id)">X</button>
+                                <button class="btn btn-sm btn-secondary" (click)="updateTasks(task.id,'Todo')">Todo</button>
+                                <button class="btn btn-sm btn-success" (click)="updateTasks(task.id,'done')">Done</button>
+                                <button class="btn btn-sm btn-warning" (click)="updateTasks(task.id,'in-progress')">In Progress</button>
+                            </div>
+                        </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </section>
+
+        <!-- In Progress -->
+        <section class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning">
+                    In Progress
+                </div>
+                <div class="card-body">
+
+                    @for(task of tasks();track task.id)
+                    {
+                        @if(task.status==="in-progress")
+                        {
+                        <div class="card mb-2 p-2 shadow-sm">
+                            <p class="fw-bold mb-1">{{task.title}}</p>
+
+                            <div class="d-flex gap-1 flex-wrap">
+                                <button class="btn btn-sm btn-danger" (click)="deleteTasks(task.id)">X</button>
+                                <button class="btn btn-sm btn-secondary" (click)="updateTasks(task.id,'Todo')">Todo</button>
+                                <button class="btn btn-sm btn-success" (click)="updateTasks(task.id,'done')">Done</button>
+                                <button class="btn btn-sm btn-warning" (click)="updateTasks(task.id,'in-progress')">In Progress</button>
+                            </div>
+                        </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Done -->
+        <section class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    Done
+                </div>
+                <div class="card-body">
+
+                    @for(task of tasks();track task.id)
+                    {
+                        @if(task.status==="done")
+                        {
+                        <div class="card mb-2 p-2 shadow-sm">
+                            <p class="fw-bold mb-1">{{task.title}}</p>
+
+                            <div class="d-flex gap-1 flex-wrap">
+                                <button class="btn btn-sm btn-danger" (click)="deleteTasks(task.id)">X</button>
+                                <button class="btn btn-sm btn-secondary" (click)="updateTasks(task.id,'Todo')">Todo</button>
+                                <button class="btn btn-sm btn-success" (click)="updateTasks(task.id,'done')">Done</button>
+                                <button class="btn btn-sm btn-warning" (click)="updateTasks(task.id,'in-progress')">In Progress</button>
+                            </div>
+                        </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>

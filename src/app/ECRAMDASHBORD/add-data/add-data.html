@@ -1,0 +1,57 @@
+<form (submit)="onsubmit($event)">
+<label>Name
+    <input type="text" [formField]="ClientsForms.name">
+</label>
+@if(ClientsForms.name().touched()&& ClientsForms.name().invalid())
+{
+    <ul>
+        @for(error of ClientsForms.name().errors();track error)
+        {
+            <li>
+                {{error.message}}
+            </li>
+        }
+    </ul>
+}
+
+<label>
+    Industry
+    <input type="text" [formField]="ClientsForms.industry">
+    @if(ClientsForms.industry().touched() && ClientsForms.industry().invalid())
+    {
+        <ul>
+            @for(error of ClientsForms.industry().errors();track error)
+            {
+                <li>
+                    {{error.message}}
+                </li>
+            }
+            <li></li>
+        </ul>
+    }
+</label>
+
+<label>
+    <select [formField]="ClientsForms.status">
+            <option value="">Select status</option>
+            <option value="active">Active</option>
+            <option value="inactive">InActive</option>
+            <option value="Prospct">Prospct</option>
+    </select>
+
+    @if(ClientsForms.status().touched()&&ClientsForms.status().invalid())
+    {
+        <ul>
+            @for(err of ClientsForms.status().errors();track err)
+            {
+                <li>
+                    {{err.message}}
+                </li>
+            }
+        </ul>
+    }
+</label>
+
+<input type="submit" value="Save Clients">
+</form>
+

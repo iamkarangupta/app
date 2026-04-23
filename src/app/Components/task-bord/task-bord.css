@@ -1,0 +1,92 @@
+:host {
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bord {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f4f4f4;
+    font-family: A;
+}
+
+.bord-header {
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+
+}
+
+h1 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 24px;
+}
+
+.bord-warrper {
+    flex-grow: 1;
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.bord-column {
+    min-width: 300px;
+    background-color: #ebecf0;
+    border-radius: 8px;
+    padding: 8px;
+    flex-direction: column;
+}
+
+.columns-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #172b4d;
+    padding: 8px;
+    margin: 0, 0, 8px, 0;
+}
+
+
+.columns-task {
+    flex-grow: 1;
+    min-height: 50px;
+}
+
+.task-card {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1-x 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f8f9fa;
+    }
+}
+p{
+    margin: 0;
+    font-size: 14px;
+    color: #172b4d;
+}
+
+
+body {
+    background: #f4f5f7;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
